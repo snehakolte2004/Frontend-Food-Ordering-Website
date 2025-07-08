@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+  <a href="code1.html" class="back-btn">← Go Back</a>
+  <h1>Your Tray</h1>
+
+  <div class="cart-container" id="cart-container"></div>
+  <div class="total" id="total-price">Total: ₹0</div>
+  <button class="checkout-btn" onclick="placeOrder()">Place Order</button>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function renderCart() {
+      const container = document.getElementById('cart-container');
+      const totalPriceElement = document.getElementById('total-price');
+      container.innerHTML = '';
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        if (!item.quantity) item.quantity = 1;
+
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('cart-item');
+
+        itemDiv.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <div class="cart-details">
+            <h3>${item.name}</h3>
+            <div class="quantity-controls">
+              <button onclick="changeQty(${index}, -1)">−</button>
+              <span>${item.quantity}</span>
+              <button onclick="changeQty(${index}, 1)">+</button>
+              <span>₹${item.price * item.quantity}</span>
+              <button class="remove-btn" onclick="removeItem(${index})">🗑</button>
+            </div>
+          </div>
+        `;
+
+        container.appendChild(itemDiv);
+        total += item.price * item.quantity;
+      });
+
+      totalPriceElement.textContent = `Total: ₹${total}`;
+    }
+
+    function changeQty(index, delta) {
+      if (cart[index].quantity + delta >= 1) {
+        cart[index].quantity += delta;
+        saveCart();
+        renderCart();
+      }
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      saveCart();
+      renderCart();
+    }
+
+    function saveCart() {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    function placeOrder() {
+      if (cart.length === 0) {
+    alert('Your tray is empty!');
+    return;
+  }
+
+  // Calculate total
+  let total = 0;
+  cart.forEach(item => {
+    total += item.price * item.quantity;
+  });
+
+  // Save cart and total to localStorage
+  localStorage.setItem('checkoutCart', JSON.stringify(cart));
+  localStorage.setItem('totalPrice', total);
+
+  // Redirect to checkout.html
+  window.location.href = 'checkout.html';
+    }
+
+    renderCart();
+  </script>
+</body>
+</html>

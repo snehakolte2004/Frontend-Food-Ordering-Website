@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soups - FoodieBox</title>
+  <link rel="stylesheet" href="soups.css" />
+</head>
+<body>
+  <div class="soup-container">
+    <header>
+      <h1>Soups</h1>
+      <a href="code1.html" class="back-button">← Back to Menu</a>
+    </header>
+
+    <section class="soup-grid">
+      <!-- Soup Card 1 -->
+      <div class="soup-card">
+        <img src="Tomato_Basil_Soup.jpg" alt="Tomato Soup" />
+        <h3>Tomato Basil Soup</h3>
+        <p>Classic creamy tomato soup with fresh basil and herbs.</p>
+        <span>₹149</span>
+        <button onclick="addToCart('Tomato Basil Soup', 149, 'Tomato_Basil_Soup.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Soup Card 2 -->
+      <div class="soup-card">
+        <img src="Chicken_Clear_Soup.jpg" alt="Chicken Soup" />
+        <h3>Chicken Clear Soup</h3>
+        <p>Light chicken broth with veggies and herbs. Healthy & warm.</p>
+        <span>₹179</span>
+        <button onclick="addToCart('Chicken_Clear_Soup',179, 'Chicken_Clear_Soup.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Soup Card 3 -->
+      <div class="soup-card">
+        <img src="Cream_of_Mushroom.jpg" alt="Mushroom Soup" />
+        <h3>Cream of Mushroom</h3>
+        <p>Rich, creamy soup made with fresh mushrooms and garlic.</p>
+        <span>₹165</span>
+        <button onclick="addToCart('Cream of Mushroom', 165, 'Cream_of_Mushroom.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Soup Card 4 -->
+      <div class="soup-card">
+        <img src="Hot_&_Sour_Veg.jpg" alt="Veg Soup" />
+        <h3>Hot & Sour Veg</h3>
+        <p>Spicy and tangy soup with chopped veggies and soy flavor.</p>
+        <span>₹140</span>
+        <button onclick="addToCart('Hot & Sour Veg', 140, 'Hot_&_Sour_Veg.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Soup Card 5 -->
+      <div class="soup-card">
+        <img src="Sweet_Corn_Soup.jpg" alt="Sweetcorn Soup" />
+        <h3>Sweet Corn Soup</h3>
+        <p>Classic Indo-Chinese soup with sweet corn and vegetables.</p>
+        <span>₹135</span>
+        <button onclick="addToCart('Sweet Corn Soup', 135, 'Sweet_Corn_Soup.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Soup Card 6 -->
+      <div class="soup-card">
+        <img src="Veg_Manchow_Soup.jpg" alt="Manchow Soup" />
+        <h3>Veg Manchow Soup</h3>
+        <p>Spicy veg soup served with crispy fried noodles.</p>
+        <span>₹149</span>
+        <button onclick="addToCart('Veg Manchow Soup', 149, 'Veg_Manchow_Soup.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Soup Card 7 -->
+      <div class="soup-card">
+        <img src="Broccoli_Almond_Soup.jpg" alt="Broccoli Soup" />
+        <h3>Broccoli Almond Soup</h3>
+        <p>Creamy broccoli soup blended with roasted almonds.</p>
+        <span>₹180</span>
+        <button onclick="addToCart('Broccoli Almond Soup', 180, 'Broccoli_Almond_Soup.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Soup Card 8 -->
+      <div class="soup-card">
+        <img src="Lentil_Soup.jpg" alt="Lentil Soup" />
+        <h3>Lentil Soup</h3>
+        <p>Wholesome lentils cooked with spices and garlic for rich flavor.</p>
+        <span>₹160</span>
+        <button onclick="addToCart('Lentil Soup', 160, 'Lentil_Soup.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Soup Card 9 -->
+      <div class="soup-card">
+        <img src="Palak_Soup.jpg" alt="Spinach Soup" />
+        <h3>Palak Soup</h3>
+        <p>Healthy spinach soup, full of iron and taste!</p>
+        <span>₹130</span>
+        <button onclick="addToCart('Palak Soup', 130, 'Palak_Soup.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Soup Card 10 -->
+      <div class="soup-card">
+        <img src="Noodle_Soup.jpg" alt="Noodle Soup" />
+        <h3>Noodle Soup</h3>
+        <p>Chinese-style soup with noodles and exotic veggies.</p>
+        <span>₹170</span>
+        <button onclick="addToCart('Noodle Soup', 170, 'Noodle_Soup.jpg')">Add to tray</button>
+      </div>
+    </section>
+  </div>
+
+  
+  <script>
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+      cart.push({ name, price, image });
+      localStorage.setItem('cart', JSON.stringify(cart));
+  
+      alert(`${name} added to your cart!`);
+    }
+  </script>
+  
+</body>
+</html>

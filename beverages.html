@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beverages</title>
+  <link rel="stylesheet" href="beverages.css"/>
+</head>
+<body>
+
+  <!-- Background Image -->
+  <div class="background-overlay"></div>
+
+  <!-- Back Button -->
+  <a href="code1.html" class="back-btn">← Back to Menu</a>
+
+  <!-- Header -->
+  <header>
+    <h1>Beverages</h1>
+  </header>
+
+  <!-- Menu Grid -->
+  <div class="menu-container">
+
+    <!-- Item 1 -->
+    <div class="menu-item">
+      <img src="coffee.jpg" alt="Coffee">
+      <div class="details">
+        <h3>Café Latte</h3>
+        <p>Rich and creamy latte made with fresh espresso and milk.</p>
+        <span>₹150</span>
+        <button onclick="addToCart('Coffee', 150, 'coffee.jpg')">Add to tray</button>
+      </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="menu-item">
+      <img src="smoothie.jpg" alt="Smoothie">
+      <div class="details">
+        <h3>Berry Smoothie</h3>
+        <p>Strawberries, blueberries, and yogurt blended into a cool treat.</p>
+        <span>₹180</span>
+        <button onclick="addToCart('Smoothie', 180, 'smoothie.jpg')">Add to tray</button>
+      </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="menu-item">
+      <img src="lemonade.jpg" alt="Lemonade">
+      <div class="details">
+        <h3>Classic Lemonade</h3>
+        <p>Fresh lemon juice, mint leaves, and chilled soda.</p>
+        <span>₹100</span>
+        <button onclick="addToCart('Lemonade', 100, 'lemonade.jpg')">Add to tray</button>
+      </div>
+    </div>
+
+    <!-- More items... -->
+    <!-- Add more beverages if you want -->
+
+  </div>
+
+
+  
+  <script>
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+      cart.push({ name, price, image });
+      localStorage.setItem('cart', JSON.stringify(cart));
+  
+      alert(`${name} added to your cart!`);
+    }
+  </script>
+</body>
+</html>

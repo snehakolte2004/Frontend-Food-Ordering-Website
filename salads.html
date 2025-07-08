@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salads</title>
+  <link rel="stylesheet" href="salads.css"/>
+</head>
+<body>
+
+  <!-- Background -->
+  <div class="background-overlay"></div>
+
+  <!-- Back Button -->
+  <a href="code1.html" class="back-btn">← Back to Menu</a>
+
+  <!-- Header -->
+  <header>
+    <h1>Salads</h1>
+  </header>
+
+  <!-- Salad Menu Grid -->
+  <div class="menu-container">
+
+    <div class="menu-item">
+      <img src="Caesar Salad.jpg" alt="Caesar Salad">
+      <div class="details">
+        <h3>Caesar Salad</h3>
+        <p>Crisp romaine lettuce with parmesan, croutons, and Caesar dressing.</p>
+        <span>₹180</span>
+        <button onclick="addToCart('Caesar Salad', 180, 'Caesar Salad.jpg')">Add to tray </button>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="Greek Salad.jpg" alt="Greek Salad">
+      <div class="details">
+        <h3>Greek Salad</h3>
+        <p>Feta cheese, olives, cucumbers, tomatoes and oregano.</p>
+        <span>₹160</span>
+        <button onclick="addToCart('Greek Salad', 160, 'Greek Salad.jpg')">Add to tray</button>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="Fruit Salad.jpg" alt="Fruit Salad">
+      <div class="details">
+        <h3>Fruit Salad</h3>
+        <p>Seasonal fresh fruits tossed with mint and lemon juice.</p>
+        <span>₹140</span>
+        <button onclick="addToCart('Fruit Salad', 140, 'Fruit Salad.jpg')">Add to tray</button>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="Chicken Salad.jpg" alt="Chicken Salad">
+      <div class="details">
+        <h3>Chicken Salad</h3>
+        <p>Grilled chicken, veggies and tangy dressing for a healthy bite.</p>
+        <span>₹200</span>
+        <button onclick="addToCart('Chicken salad', 200, 'Chicken Salad.jpg')">Add to tray</button>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="Quinoa Salad.jpg" alt="Quinoa Salad">
+      <div class="details">
+        <h3>Quinoa Salad</h3>
+        <p>Protein-rich quinoa, corn, bell peppers and olive oil dressing.</p>
+        <span>₹190</span>
+        <button onclick="addToCart('Quinoa Salad', 190, 'Quinoa Salad.jpg')">Add to tray</button>
+      </div>
+    </div>
+
+    <!-- Add more salad items as needed -->
+
+  </div>
+
+
+  <script>
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+      cart.push({ name, price, image });
+      localStorage.setItem('cart', JSON.stringify(cart));
+  
+      alert(`${name} added to your cart!`);
+    }
+  </script>
+</body>
+</html>

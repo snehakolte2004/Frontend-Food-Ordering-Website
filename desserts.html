@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Desserts - Menu</title>
+  <link rel="stylesheet" href="desserts.css" />
+</head>
+<body>
+  <div class="menu-container">
+    <a href="code1.html" class="back-btn">← Back to Menu</a>
+    <h1 class="section-title">Desserts</h1>
+
+    <div class="menu-grid">
+
+      <!-- Dish 1 -->
+      <div class="menu-item">
+        <img src="gulab jamun.jpg" alt="Gulab Jamun">
+        <h3>Gulab Jamun</h3>
+        <p>Sweet, syrup-soaked dumplings made of milk solids.</p>
+        <span>₹60</span>
+        <button  onclick="addToCart('Gulab Jamun ', 60, 'gulab jamun.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Dish 2 -->
+      <div class="menu-item">
+        <img src="rasgulla.jpg" alt="rasgulla">
+        <h3>Rasgulla</h3>
+        <p>Soft, spongy balls soaked in sugar syrup.</p>
+        <span>₹55</span>
+        <button  onclick="addToCart('Rasgulla ', 55, 'rasgulla.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Dish 3 -->
+      <div class="menu-item">
+        <img src="chocolate cake.jpg" alt="Chocolate Cake">
+        <h3>Chocolate Cake</h3>
+        <p>Moist and rich cake layered with chocolate ganache.</p>
+        <span>₹120</span>
+        <button  onclick="addToCart('Chocolate cake ', 120, 'choclate cake.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Dish 4 -->
+      <div class="menu-item">
+        <img src="icecream.jpg" alt="Vanilla Ice Cream">
+        <h3>Vanilla Ice Cream</h3>
+        <p>Classic vanilla ice cream topped with nuts.</p>
+        <span>₹70</span>
+        <button  onclick="addToCart('Vanilla Ice Cream ', 70, 'icecream.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Dish 5 -->
+      <div class="menu-item">
+        <img src="browine.jpg" alt="Brownie">
+        <h3>Choco Brownie</h3>
+        <p>Warm, gooey brownie served with chocolate sauce.</p>
+        <span>₹90</span>
+        <button  onclick="addToCart('Brownie ', 90, 'browine.jpg')">Add to tray</button>
+      </div>
+
+      
+      <!-- Dish 6 -->
+      <div class="menu-item">
+        <img src="halwa.jpg" alt="Gajar Halwa">
+        <h3>Gajar Halwa</h3>
+        <p>Grated carrot cooked in milk and ghee, garnished with dry fruits.</p>
+        <span>₹75</span>
+        <button  onclick="addToCart('Halwa', 75, 'halwa.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Dish 7 -->
+      <div class="menu-item">
+        <img src="shrikhand.jpg" alt="Shrikhand">
+        <h3>Shrikhand</h3>
+        <p>Sweetened yogurt dessert flavored with saffron and cardamom.</p>
+        <span>₹80</span>
+        <button  onclick="addToCart('shrikhand ', 80, 'shrikhand.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Dish 8 -->
+      <div class="menu-item">
+        <img src="pastry.jpg" alt="Strawberry Pastry">
+        <h3>Strawberry Pastry</h3>
+        <p>Fluffy cake slice filled with strawberry cream and glaze.</p>
+        <span>₹85</span>
+        <button  onclick="addToCart('Pastry ', 85, 'pastry.jpg')">Add to tray</button>
+      </div>
+
+
+  <script>
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+      cart.push({ name, price, image });
+      localStorage.setItem('cart', JSON.stringify(cart));
+  
+      alert(`${name} added to your cart!`);
+    }
+  </script>
+</body>
+</html>

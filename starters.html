@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Starters | Foodie Restaurant</title>
+  <link rel="stylesheet" href="starters.css" />
+</head>
+<body>
+    <a href="code1.html" class="back-btn">← Back to Menu</a>
+
+  <div class="menu-section">
+    <div class="menu-category">
+      <h2>Starters</h2>
+      <div class="menu-items">
+        
+        <!-- Sample Dishes -->
+        <div class="menu-item">
+          <img src="Tomato_soup.jpg" alt="Tomato Soup">
+          <h3>Tomato Soup</h3>
+          <p>Creamy tomato soup with fresh herbs and a drizzle of cream.</p>
+          <div class="price-order">
+            <span class="price">₹120</span>
+            <button onclick="addToCart('Tomato soup', 120, 'Tomato_soup.jpg')">Add to tray</button>
+          </div>
+        </div>
+
+        <div class="menu-item">
+          <img src="Veg_Spring_Rolls.jpg" alt="Veg Spring Rolls">
+          <h3>Veg Spring Rolls</h3>
+          <p>Crispy rolls stuffed with mixed veggies and served with dip.</p>
+          <div class="price-order">
+            <span class="price">₹160</span>
+            <button onclick="addToCart('Veg Spring Rolls', 160, 'Veg_Spring_Rolls.jpg')">Add to tray</button>
+          </div>
+        </div>
+
+        <div class="menu-item">
+          <img src="Paneer_tikka.jpg" alt="Paneer Tikka">
+          <h3>Paneer Tikka</h3>
+          <p>Char-grilled paneer cubes marinated in Indian spices.</p>
+          <div class="price-order">
+            <span class="price">₹220</span>
+            <button onclick="addToCart('paneer Tikka', 220, 'paneer_tikka.jpg')">Add to tray</button>
+          </div>
+        </div>
+
+        <div class="menu-item">
+          <img src="Cheesy_Nachos.jpg" alt="Cheesy Nachos">
+          <h3>Cheesy Nachos</h3>
+          <p>Topped with olives, jalapeños, and spicy cheese sauce.</p>
+          <div class="price-order">
+            <span class="price">₹180</span>
+            <button onclick="addToCart('Cheesy Nachos', 180, 'Cheesy_Nachos.jpg')">Add to tray </button>
+          </div>
+        </div>
+
+        <div class="menu-item">
+          <img src="veg_manchurian.jpg" alt="Veg Manchurian">
+          <h3>Veg Manchurian</h3>
+          <p>Crispy balls in spicy Indo-Chinese gravy.</p>
+          <div class="price-order">
+            <span class="price">₹200</span>
+            <button onclick="addToCart('paneer Tikka', 200, 'veg_manchurian.jpg')">Add to tray</button>
+          </div>
+        </div>
+
+        <!-- Add more dishes as needed -->
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+      cart.push({ name, price, image });
+      localStorage.setItem('cart', JSON.stringify(cart));
+  
+      alert(`${name} added to your cart!`);
+    }
+  </script>
+  
+
+</body>
+</html>

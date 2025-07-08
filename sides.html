@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sides - Foodie Website</title>
+  <link rel="stylesheet" href="sides.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="back-btn">
+    <a href="code1.html">← Back to Menu</a>
+  </div>
+
+  <header>
+    <h1>Sides</h1>
+    <p>Perfect companions for your main course</p>
+  </header>
+
+  <section class="menu-items">
+    <!-- Repeat for each item -->
+    <div class="item-card">
+      <img src="french-fries.jpg" alt="French Fries">
+      <h3>French Fries</h3>
+      <p>Crispy golden potato fries with a pinch of salt.</p>
+      <span>₹99</span>
+      <button onclick="addToCart('French Fries', 99, 'french-fries.jpg')">Add to tray</button>
+    </div>
+
+    <div class="item-card">
+      <img src="garlic-bread.jpg" alt="Garlic Bread">
+      <h3>Garlic Bread</h3>
+      <p>Toasted bread with garlic butter and herbs.</p>
+      <span>₹129</span>
+      <button onclick="addToCart('Garlic Bread', 129, 'garlic-bread.jpg')">Add to tray</button>
+    </div>
+
+
+    <div class="item-card">
+      <img src="nachos.jpg" alt="Nachos">
+      <h3>Nachos</h3>
+      <p>Crunchy nachos topped with salsa and melted cheese.</p>
+      <span>₹149</span>
+      <button onclick="addToCart('Nachos', 149, 'nachos.jpg')">Add to tray</button>
+    </div>
+
+    <div class="item-card">
+      <img src="onion-rings.jpg" alt="Onion Rings">
+      <h3>Onion Rings</h3>
+      <p>Deep-fried crispy onion rings with a tangy dip.</p>
+      <span>₹119</span>
+      <button onclick="addToCart('Onion Rings', 119, 'onion-rings.jpg')">Add to tray</button>
+    </div>
+
+    <div class="item-card">
+      <img src="potato-wedges.jpg" alt="Potato Wedges">
+      <h3>Potato Wedges</h3>
+      <p>Spiced and baked potato wedges served hot.</p>
+      <span>₹109</span>
+      <button onclick="addToCart('Potato Wedges', 109, 'potato-wedges.jpg')">Add to tray</button>
+    </div>
+  </section>
+
+
+  
+  <script>
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+      cart.push({ name, price, image });
+      localStorage.setItem('cart', JSON.stringify(cart));
+  
+      alert(`${name} added to your cart!`);
+    }
+  </script>
+</body>
+</html>

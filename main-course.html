@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Main Course | Foodie</title>
+  <link rel="stylesheet" href="main-course.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="menu-page">
+    <button class="back-btn" onclick="window.history.back()">← Go Back</button>
+    <h1 class="menu-title">Main Course</h1>
+    <div class="menu-grid">
+      <!-- Dish Cards -->
+      <div class="menu-card">
+        <img src="Butter Chicken.jpg" alt="Butter Chicken">
+        <div class="menu-content">
+          <h3>Butter Chicken</h3>
+          <p>Rich and creamy tomato-based curry with tender chicken pieces.</p>
+          <div class="menu-bottom">
+            <span>₹320</span>
+            <button onclick="addToCart('Butter Chicken', 320, 'Butter Chicken.jpg')">Add to tray</button>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="Paneer Tikka Masala.jpg" alt="Paneer Tikka Masala">
+        <div class="menu-content">
+          <h3>Paneer Tikka Masala</h3>
+          <p>Grilled paneer in spicy tikka gravy.</p>
+          <div class="menu-bottom">
+            <span>₹280</span>
+            <button onclick="addToCart('Paneer Tikka Masala', 280, 'Paneer Tikka Masala.jpg')">Add to tray</button>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="Dal-makhni.jpg" alt="Dal Makhani">
+        <div class="menu-content">
+          <h3>Dal Makhani</h3>
+          <p>Slow-cooked black lentils in a buttery sauce.</p>
+          <div class="menu-bottom">
+            <span>₹220</span>
+            <button onclick="addToCart('dal Makhani, 220, 'Dal-makhni.jpg')">Add to tray</button>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="Kadhai-Chicken.jpg" alt="Kadhai Chicken">
+        <div class="menu-content">
+          <h3>Kadhai Chicken</h3>
+          <p>Chicken cooked in a spiced tomato gravy with capsicum.</p>
+          <div class="menu-bottom">
+            <span>₹300</span>
+            <button onclick="addToCart('Kadhai chicken', 300, 'Kadhai-Chicken.jpg')">Add to tray</button>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="veg Kolhapuri.jpg" alt="Veg Kolhapuri">
+        <div class="menu-content">
+          <h3>Veg Kolhapuri</h3>
+          <p>Spicy mixed veg curry from Maharashtra.</p>
+          <div class="menu-bottom">
+            <span>₹260</span>
+            <button onclick="addToCart('Veg Kolhapuri',260, 'Veg Kolhapuri.jpg')">Add to tray</button>
+          </div>
+        </div>
+      </div>
+      <!-- Add more dishes -->
+      <div class="menu-card">
+        <img src="Mutton Curry.jpg" alt="Mutton Curry">
+        <div class="menu-content">
+          <h3>Mutton Curry</h3>
+          <p>Slow cooked mutton in spicy curry sauce.</p>
+          <div class="menu-bottom">
+            <span>₹370</span>
+            <button onclick="addToCart('Mutton Curry', 370, 'Mutton Curry.jpg')">Add to tray</button>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="Kofta Curry.jpg" alt="Kofta Curry">
+        <div class="menu-content">
+          <h3>kofta Curry</h3>
+          <p>Malai kofta in rich cashew-based gravy.</p>
+          <div class="menu-bottom">
+            <span>₹240</span>
+            <button onclick="addToCart('kofta Curry', 240, 'kofta Curry.jpg')">Add to tray</button>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="Rajma Masala.jpg" alt="Rajma Masala">
+        <div class="menu-content">
+          <h3>Rajma Masala</h3>
+          <p>Kidney beans cooked in thick tomato gravy.</p>
+          <div class="menu-bottom">
+            <span>₹210</span>
+            <button onclick="addToCart('Rajma Masala', 210, 'Rajma Masala.jpg')">Add to tray</button>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="Fish Curry.jpg" alt="Fish Curry">
+        <div class="menu-content">
+          <h3>Fish Curry</h3>
+          <p>Coastal style spicy fish curry with coconut flavor.</p>
+          <div class="menu-bottom">
+            <span>₹340</span>
+            <button onclick="addToCart('Fish Curry', 340, 'Fish Curry.jpg')">Add to tray</button>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="Chole Masala.jpg" alt="Chole Masala">
+        <div class="menu-content">
+          <h3>Chole Masala</h3>
+          <p>Spiced chickpeas cooked Punjabi-style.</p>
+          <div class="menu-bottom">
+            <span>₹200</span>
+          <button onclick="addToCart('Chole Masala', 200, 'Chole Masala.jpg')">Add to tray</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+  <script>
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+      cart.push({ name, price, image });
+      localStorage.setItem('cart', JSON.stringify(cart));
+  
+      alert(`${name} added to your cart!`);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+  <div class="container">
+    <a href="cart.html" class="back-btn">← Go Back</a>
+    <h1>Checkout</h1>
+
+    <div id="item-count"></div>
+    <div id="cart-items"></div>
+    <div class="total" id="total-price">Total: ₹0</div>
+
+    <div class="address-form">
+      <h3>Shipping Address</h3>
+      <form id="address-form">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="tel" id="phone" placeholder="Your Phone" required>
+        <textarea id="address" placeholder="Your Address" required></textarea>
+
+        <h4>Select Payment Method</h4>
+        <label><input type="radio" name="payment" value="upi" required> UPI</label>
+        <label><input type="radio" name="payment" value="cod"> Cash on Delivery</label>
+
+
+        <a href="thankyou.html" type="submit" id="pay-btn">Place Order</a>
+      
+      </form>
+      
+    </div>
+
+    <div id="confirmation" class="hidden">
+      <p>Thank you <span id="name"></span>!</p>
+      <p>Your order will be delivered to <span id="address"></span></p>
+    </div>
+  </div>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="checkout.js"></script>
+ 
+</body>
+</html>

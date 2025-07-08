@@ -1,0 +1,121 @@
+6TRY7ERTYUJKzXzxCV<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rotis & Rice - Menu</title>
+  <link rel="stylesheet" href="rotis-rice.css" />
+</head>
+<body>
+  <div class="menu-container">
+    <a href="code1.html" class="back-btn">← Back to Menu</a>
+    <h1 class="section-title">Rotis & Rice</h1>
+
+    <div class="menu-grid">
+
+      <!-- Dish 1 -->
+      <div class="menu-item">
+        <img src="tandoori roti.jpg" alt="Tandoori Roti">
+        <h3>Tandoori Roti</h3>
+        <p>Crispy clay oven-cooked wheat roti served hot with butter.</p>
+        <span>₹20</span>
+        <button onclick="addToCart('tandoori roti', 20, 'tandoori roti.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Dish 2 -->
+      <div class="menu-item">
+        <img src="butter naan.jpg" alt="Butter Naan">
+        <h3>Butter Naan</h3>
+        <p>Soft, fluffy naan topped with melted butter.</p>
+        <span>₹40</span>
+        <button onclick="addToCart('Butter naan', 40, 'butter naan.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Dish 3 -->
+      <div class="menu-item">
+        <img src="garlic naan.jpg" alt="Garlic Naan">
+        <h3>Garlic Naan</h3>
+        <p>Classic naan with garlic and coriander toppings.</p>
+        <span>₹45</span>
+        <button onclick="addToCart('Garlic naan ', 45, 'Garlic naan.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Dish 4 -->
+      <div class="menu-item">
+        <img src="plain rice.jpg" alt="Plain Rice">
+        <h3>Steamed Rice</h3>
+        <p>Simple, soft and steamed white rice.</p>
+        <span>₹60</span>
+        <button onclick="addToCart('Steamed rice', 60, 'plain rice.jpg)">Add to tray</button>
+      </div>
+
+      <!-- Dish 5 -->
+      <div class="menu-item">
+        <img src="jeera rice.jpg" alt="Jeera Rice">
+        <h3>Jeera Rice</h3>
+        <p>Long grain basmati rice tempered with cumin seeds.</p>
+        <span>₹80</span>
+        <button onclick="addToCart('Jeera Rice', 80, 'jeera rice.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Dish 6 -->
+      <div class="menu-item">
+        <img src="veg pulao.jpg" alt="Veg Pulao">
+        <h3>Veg Pulao</h3>
+        <p>Rice cooked with mixed veggies and aromatic spices.</p>
+        <span>₹110</span>
+        <button onclick="addToCart('Veg pulao', 110, 'veg pulao.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Dish 7 -->
+      <div class="menu-item">
+        <img src="veg biryani.jpg" alt="Veg Biryani">
+        <h3>Veg Biryani</h3>
+        <p>Fragrant basmati rice cooked with vegetables and saffron.</p>
+        <span>₹150</span>
+        <button onclick="addToCart('Veg Biryani', 150, 'veg biryani.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Dish 8 -->
+      <div class="menu-item">
+        <img src="lachha paratha.jpg" alt="Laccha Paratha">
+        <h3>Laccha Paratha</h3>
+        <p>Layered whole wheat flatbread with a crispy finish.</p>
+        <span>₹35</span>
+        <button onclick="addToCart('Lachha paratha', 35, 'lachha paratha.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Dish 9 -->
+      <div class="menu-item">
+        <img src="methi paratha.jpg" alt="Methi Paratha">
+        <h3>Methi Paratha</h3>
+        <p>Whole wheat paratha made with fresh fenugreek leaves.</p>
+        <span>₹40</span>
+        <button onclick="addToCart('Methi paratha ', 40, 'methi paratha.jpg')">Add to tray</button>
+      </div>
+
+      <!-- Dish 10 -->
+      <div class="menu-item">
+        <img src="veg fried rice.jpg" alt="Veg Fried Rice">
+        <h3>Veg Fried Rice</h3>
+        <p>Stir-fried rice with colorful vegetables and soy sauce.</p>
+        <span>₹120</span>
+        <button onclick="addToCart('Veg fried rice ', 120, 'Veg fried rice.jpg')">Add to tray</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+      cart.push({ name, price, image });
+      localStorage.setItem('cart', JSON.stringify(cart));
+  
+      alert(`${name} added to your cart!`);
+    }
+  </script>
+
+</body>
+</html>

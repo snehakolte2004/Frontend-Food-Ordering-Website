@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('images/menu-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+  }
+  
+  .menu-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 60px 30px;
+    min-height: 100vh;
+  }
+  
+  .back-btn {
+    text-decoration: none;
+    background-color: #d41b27;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transition: background 0.3s ease;
+    font-weight: bold;
+  }
+  
+  .back-btn:hover {
+    background-color: #b01520;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 40px;
+    animation: slideIn 1s ease;
+  }
+  
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  
+  .menu-item {
+    background: #111;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+    animation: fadeInUp 0.8s ease;
+  }
+  
+  .menu-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .menu-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .menu-item h3 {
+    margin: 15px 0 10px;
+    color: #fff;
+  }
+  
+  .menu-item p {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  .menu-item span {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #fff;
+  }
+  
+  .order-btn {
+    background-color: #d41b27;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .order-btn:hover {
+    background-color: #a21822;
+  }
+  
+  /* Animations */
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
